@@ -1,0 +1,24 @@
+/* Classic Windows: the defaults in base.css are this skin, so only details live here. */
+:root {
+  --window-border: 0;
+  --window-pad: 4px;
+}
+.window { box-shadow: inset -1px -1px #000, inset 1px 1px #dfdfdf, inset -2px -2px #808080, inset 2px 2px #fff; }
+.titlebar { background: linear-gradient(90deg, #000080, #1084d0); }
+body, .btn, .tab { -webkit-font-smoothing: none; }
+.btn, .tab, .tb-btn {
+  box-shadow: inset -1px -1px #000, inset 1px 1px #fff, inset -2px -2px #808080, inset 2px 2px #dfdfdf;
+}
+.btn:active, .tab.active, .btn.active, .tb-btn:active {
+  box-shadow: inset 1px 1px #000, inset -1px -1px #fff, inset 2px 2px #808080, inset -2px -2px #dfdfdf;
+}
+.tab.active { background: #c0c0c0; }
+.display, .list, .field {
+  box-shadow: inset 1px 1px #808080, inset -1px -1px #fff, inset 2px 2px #000, inset -2px -2px #dfdfdf;
+}
+.list { padding: 3px; }
+.list::-webkit-scrollbar { width: 16px; }
+.list::-webkit-scrollbar-track {
+  background: repeating-conic-gradient(#c0c0c0 0% 25%, #fff 0% 50%) 0 0 / 2px 2px;
+}
+.row.selected { outline: 1px dotted #ff0; outline-offset: -1px; }

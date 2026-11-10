@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' https: data:; style-src 'self' 'unsafe-inline'">
+<title>RetroTune</title>
+<link rel="stylesheet" href="base.css">
+<link rel="stylesheet" id="theme-css" href="themes/classic/theme.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-prev" viewBox="0 0 16 16"><path d="M3 3h2v10H3zM13 3v10L6 8z"/></symbol>
+  <symbol id="i-play" viewBox="0 0 16 16"><path d="M4 2.5v11L13.5 8z"/></symbol>
+  <symbol id="i-pause" viewBox="0 0 16 16"><path d="M3.5 3h3.2v10H3.5zM9.3 3h3.2v10H9.3z"/></symbol>
+  <symbol id="i-next" viewBox="0 0 16 16"><path d="M11 3h2v10h-2zM3 3v10l7-5z"/></symbol>
+  <symbol id="i-shuffle" viewBox="0 0 16 16"><path d="M1 4h3.2l5.6 8H12v2l3-3-3-3v2h-1.2L5.2 2H1zM12 4v2l3-3-3-3v2H9.8L8.3 4.1l1.2 1.7L10.8 4zM1 12h4.2l1.5-2.1-1.2-1.7L4.2 10H1z"/></symbol>
+  <symbol id="i-repeat" viewBox="0 0 16 16"><path d="M3 4h8V2l3 3-3 3V6H5v2H3zM13 12H5v2l-3-3 3-3v2h6V8h2z"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 16 16"><path d="M8 14 2.2 8.3a3.5 3.5 0 0 1 5-5L8 4.1l.8-.8a3.5 3.5 0 0 1 5 5z"/></symbol>
+  <symbol id="i-volume" viewBox="0 0 16 16"><path d="M2 6h3l4-3.5v11L5 10H2zM11 5.2a4 4 0 0 1 0 5.6l-.9-.9a2.7 2.7 0 0 0 0-3.8z"/></symbol>
+  <symbol id="i-back" viewBox="0 0 16 16"><path d="M10.5 2.5 5 8l5.5 5.5 1.4-1.4L7.8 8l4.1-4.1z"/></symbol>
+</svg>
+
+<div id="app" class="window">
+  <header class="titlebar">
+    <span class="titlebar-icon"></span>
+    <span class="titlebar-text">RetroTune</span>
+    <span class="titlebar-buttons">
+      <button class="tb-btn" id="btn-menu" title="Menu and skins" aria-label="Menu">≡</button>
+      <button class="tb-btn" id="btn-compact" title="Compact mode" aria-label="Compact mode">▂</button>
+      <button class="tb-btn" id="btn-min" title="Minimise" aria-label="Minimise">–</button>
+      <button class="tb-btn" id="btn-close" title="Close" aria-label="Close">×</button>
+    </span>
+  </header>
+
+  <section class="deck">
+    <div class="display">
+      <div class="art"><img id="art" alt=""></div>
+      <div class="readout">
+        <div class="readout-top">
+          <button class="time" id="time" title="Switch between elapsed and remaining">00:00</button>
+          <span class="status" id="status">STOPPED</span>
+        </div>
+        <div class="marquee" id="marquee"><span id="marquee-text">RetroTune</span></div>
+        <div class="meta" id="meta">&nbsp;</div>
+      </div>
+      <canvas class="viz" id="viz" width="152" height="56" title="Click to change visualizer"></canvas>
+    </div>
+
+    <input class="slider seek" id="seek" type="range" min="0" max="1000" value="0" aria-label="Seek">
+
+    <div class="controls">
+      <div class="group transport">
+        <button class="btn" id="btn-prev" title="Previous"><svg><use href="#i-prev"/></svg></button>
+        <button class="btn btn-play" id="btn-play" title="Play / Pause"><svg><use id="play-icon" href="#i-play"/></svg></button>
+        <button class="btn" id="btn-next" title="Next"><svg><use href="#i-next"/></svg></button>
+      </div>
+      <div class="group toggles">
+        <button class="btn btn-small" id="btn-shuffle" title="Shuffle queue"><svg><use href="#i-shuffle"/></svg></button>
+        <button class="btn btn-small" id="btn-repeat" title="Repeat"><svg><use href="#i-repeat"/></svg><i class="badge" id="repeat-badge"></i></button>
+        <button class="btn btn-small" id="btn-like" title="Like"><svg><use href="#i-heart"/></svg></button>
+      </div>
+      <div class="group volume">
+        <svg class="volume-icon"><use href="#i-volume"/></svg>
+        <input class="slider" id="volume" type="range" min="0" max="100" value="100" aria-label="Volume">
+      </div>
+    </div>
+  </section>
+
+  <nav class="tabs" role="tablist">
+    <button class="tab" data-tab="queue" role="tab">Queue</button>
+    <button class="tab" data-tab="search" role="tab">Search</button>
+    <button class="tab" data-tab="library" role="tab">Library</button>
+    <button class="tab" data-tab="home" role="tab">Home</button>
+  </nav>
+
+  <section class="panel">
+    <div class="panel-bar" id="panel-bar"></div>
+    <div class="list" id="list" tabindex="0"></div>
+  </section>
+
+  <footer class="statusbar">
+    <span id="statusbar-text">Ready</span>
+    <button class="link" id="btn-ytm" title="Show the real YouTube Music window">YouTube Music</button>
+  </footer>
+</div>
+
+<script src="mock.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

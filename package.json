@@ -1,0 +1,26 @@
+{
+  "name": "retro-music-player",
+  "productName": "RetroTune",
+  "version": "0.1.0",
+  "description": "A skinnable retro music player for macOS that drives YouTube Music",
+  "main": "src/main/main.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "test": "node --test",
+    "dist": "electron-builder --mac"
+  },
+  "build": {
+    "appId": "com.retrotune.player",
+    "files": ["src/**/*", "assets/**/*"],
+    "mac": {
+      "category": "public.app-category.music",
+      "target": ["dmg"],
+      "icon": "assets/icon.png"
+    }
+  },
+  "devDependencies": {
+    "electron": "^39.0.0",
+    "electron-builder": "^26.0.0"
+  }
+}

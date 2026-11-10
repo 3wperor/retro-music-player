@@ -1,0 +1,65 @@
+/* Night: near-black glass with neon magenta and cyan. */
+:root {
+  --font: "SF Mono", Menlo, Monaco, "Courier New", monospace;
+  --font-size: 10.5px;
+  --font-display: "SF Mono", Menlo, Monaco, monospace;
+
+  --window-bg: linear-gradient(180deg, #14101f, #0a0812);
+  --window-border: 1px solid #3a2a5c;
+  --window-radius: 10px;
+  --window-pad: 6px;
+  --text: #c9c2e8;
+  --text-dim: #7c74a3;
+  --accent: #33e1ff;
+
+  --title-bg: transparent;
+  --title-text: #ff4fd8;
+  --title-height: 22px;
+
+  --raised: inset 0 0 0 1px #3a2a5c;
+  --pressed: inset 0 0 0 1px #33e1ff, 0 0 8px rgba(51, 225, 255, .45);
+  --sunken: inset 0 0 0 1px #2a1f45;
+
+  --btn-bg: #17122a;
+  --btn-text: #b9b0e0;
+  --btn-radius: 4px;
+  --btn-active-bg: #1b1436;
+  --btn-active-text: #33e1ff;
+
+  --display-bg: #07050d;
+  --display-text: #ff4fd8;
+  --display-dim: #8c4fd8;
+  --display-radius: 6px;
+
+  --list-bg: #0d0a18;
+  --list-text: #d6d0f2;
+  --list-dim: #7269a0;
+  --list-select-bg: #2a1a52;
+  --list-select-text: #fff;
+  --list-current: #33e1ff;
+
+  --slider-track: #2a1f45;
+  --slider-thumb: #ff4fd8;
+  --slider-thumb-width: 6px;
+  --slider-thumb-height: 14px;
+  --slider-thumb-radius: 3px;
+
+  --viz-low: #7a3cff;
+  --viz-high: #ff4fd8;
+  --viz-peak: #33e1ff;
+}
+.titlebar { text-transform: uppercase; letter-spacing: 3px; text-shadow: 0 0 8px rgba(255, 79, 216, .8); border-bottom: 1px solid #2a1f45; }
+.tb-btn { background: none; box-shadow: none; color: #7c74a3; }
+.tb-btn:hover { color: #33e1ff; }
+.display { box-shadow: inset 0 0 0 1px #3a2a5c, 0 0 14px rgba(255, 79, 216, .18); }
+.time, .marquee { text-shadow: 0 0 8px rgba(255, 79, 216, .75); }
+.marquee { color: #f3e9ff; }
+.btn:hover, .tab:hover { color: #fff; }
+.btn-play { color: #33e1ff; box-shadow: inset 0 0 0 1px #33e1ff, 0 0 10px rgba(51, 225, 255, .35); }
+#btn-like.active { color: #ff4fd8; box-shadow: inset 0 0 0 1px #ff4fd8, 0 0 8px rgba(255, 79, 216, .45); }
+.slider::-webkit-slider-thumb { box-shadow: 0 0 8px rgba(255, 79, 216, .9); }
+.tab { text-transform: uppercase; letter-spacing: 1px; }
+.section-title { text-transform: uppercase; letter-spacing: 1px; }
+.list::-webkit-scrollbar { width: 8px; }
+.list::-webkit-scrollbar-thumb { background: #3a2a5c; box-shadow: none; }
+.statusbar { box-shadow: none; border-top: 1px solid #2a1f45; padding-top: 5px; }
